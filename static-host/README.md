@@ -18,12 +18,21 @@ Successfully built 46f288c1ba09
 Successfully tagged statichost_nginx:latest
 ```
 
+*Avoid issues by tearing down those resources once you are done with the container*
+
+```
+nginx_1  | 172.25.0.1 - - [20/Jul/2017:17:09:29 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/603.3.8 (KHTML, like Gecko) Version/10.1.2 Safari/603.3.8"
+^CGracefully stopping... (press Ctrl+C again to force)
+Stopping statichost_nginx_1 ... done
+it-15438:static-host kellym1-v$ docker-compose down
+```
+
 ### You can use the following code to run using just the docker command, for extra flexibility:
 
 ```
 it-15438:static-host kellym1-v$ docker images | grep static
 it-15438:static-host kellym1-v$ docker images | grep static-server
-it-15438:static-host kellym1-v$ docker build -t static-server .
+it-15438:static-host kellym1-v$ docker build --rm -t static-server .
 Sending build context to Docker daemon  8.192kB
 Step 1/3 : FROM nginx
  ---> e4e6d42c70b3
