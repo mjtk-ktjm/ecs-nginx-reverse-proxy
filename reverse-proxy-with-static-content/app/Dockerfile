@@ -1,7 +1,7 @@
 FROM mhart/alpine-node:7.4.0
 
 WORKDIR /srv
-ADD . .
+ADD ./src .
 RUN npm install
 
 EXPOSE 3000
