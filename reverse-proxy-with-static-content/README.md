@@ -1,3 +1,5 @@
+# uwsgi flavor
+
 ## NGINX Reverse Proxy on ECS
 
 __What is a reverse proxy?__ It is a server which fetches resources from another server on behalf of a client.
