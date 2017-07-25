@@ -5,8 +5,14 @@ services:
       context: ./nginx
     ports:
       - 80:80
-    links:
-      - app
+    networks:
+      - app-net
   app:
     build:
       context: ./app
+    networks:
+      - app-net
+
+networks:
+  app-net:
+    driver: bridge
